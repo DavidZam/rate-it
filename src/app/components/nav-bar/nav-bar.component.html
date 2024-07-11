@@ -2,11 +2,7 @@
   <div class="container">
     <ul class="navbar-nav">
       @for(itemLink of navBarItemLinks; track itemLink) {
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="itemLink">{{
-          itemLink.charAt(0).toUpperCase() + itemLink.slice(1)
-        }}</a>
-      </li>
+      <app-nav-bar-item [itemLink]="itemLink" />
       }
     </ul>
   </div>
