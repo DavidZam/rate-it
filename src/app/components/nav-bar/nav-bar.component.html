@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light my-4">
+  <div class="container">
+    <ul class="navbar-nav">
+      @for(itemLink of navBarItemLinks; track itemLink) {
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="itemLink">{{
+          itemLink.charAt(0).toUpperCase() + itemLink.slice(1)
+        }}</a>
+      </li>
+      }
+    </ul>
+  </div>
+</nav>

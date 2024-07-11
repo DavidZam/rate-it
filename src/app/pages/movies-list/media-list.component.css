@@ -1,0 +1,10 @@
+.card-subtitle-max {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+    max-height: 175px;
+}
+
+.container-height {
+    height: 200px;
+}
