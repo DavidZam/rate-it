@@ -7,14 +7,14 @@
     />
     <img
       class="img-fluid img-thumbnail"
-      alt="..."
+      alt="Media Card Image"
       src="{{ API_IMG_URL }}{{ movie?.poster_path }}"
     />
   </picture>
   <h6 class="card-subtitle card-subtitle-max my-2 text-muted">
     {{ movie?.overview }}
   </h6>
-  <p class="card-text">
-    Release date: {{ movie?.release_date | date : "dd/MM/yyyy" }}
-  </p>
+  <div class="card-text">
+    <h5>Release date: {{ movie?.release_date | date : "dd/MM/yyyy" }}</h5>
+  </div>
 </div>
