@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Movie } from '../../models/movie';
+import { Media } from '../../models/media';
 import { DatePipe } from '@angular/common';
 
 @Component({
@@ -11,5 +11,5 @@ import { DatePipe } from '@angular/common';
 })
 export class MediaCardComponent {
   API_IMG_URL = 'https://image.tmdb.org/t/p/w500';
-  @Input({ required: true }) movie: Movie | undefined;
+  @Input({ required: true }) media: Media | undefined;
 }

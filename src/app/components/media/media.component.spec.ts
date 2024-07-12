@@ -1,11 +1,11 @@
 import { HttpClient, HttpHandler } from '@angular/common/http';
-import { render, screen } from '@testing-library/angular';
+import { render } from '@testing-library/angular';
 import '@testing-library/jest-dom';
-import { MoviesListComponent } from './media-list.component';
+import { MediaComponent } from './media.component';
 
-describe('Movie List', () => {
+describe('Media', () => {
   it('should render the component', async () => {
-    await render(MoviesListComponent, {
+    await render(MediaComponent, {
       providers: [HttpClient, HttpHandler],
     });
   });

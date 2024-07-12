@@ -1,13 +1,13 @@
 import { DatePipe } from '@angular/common';
 import { render, screen } from '@testing-library/angular';
 import '@testing-library/jest-dom';
-import { Movie } from '../../models/movie';
+import { Media } from '../../models/media';
 import { MediaCardComponent } from './media-card.component';
 
-const movie: Movie = {
+const media: Media = {
   id: 1,
-  title: 'Awesome movie',
-  overview: 'The most awesome movie of history',
+  title: 'Awesome media',
+  overview: 'The most awesome media of history',
   poster_path: '/zszRKfzjM5jltiq8rk6rasKVpUv.jpg',
   release_date: '2024-06-20',
 };
@@ -19,46 +19,46 @@ describe('Media Card', () => {
     await render(MediaCardComponent);
   });
 
-  it('should display movie title on render', async () => {
+  it('should display media title on render', async () => {
     await render(MediaCardComponent, {
       componentProperties: {
-        movie,
+        media,
       },
     });
 
-    expect(screen.getByText(movie.title)).toBeInTheDocument();
+    expect(screen.getByText(media.title)).toBeInTheDocument();
   });
 
-  it('should display movie overview on render', async () => {
+  it('should display media overview on render', async () => {
     await render(MediaCardComponent, {
       componentProperties: {
-        movie,
+        media,
       },
     });
 
-    expect(screen.getByText(movie.overview)).toBeInTheDocument();
+    expect(screen.getByText(media.overview)).toBeInTheDocument();
   });
 
-  it('should display movie release date on render', async () => {
+  it('should display media release date on render', async () => {
     await render(MediaCardComponent, {
       imports: [DatePipe],
       componentProperties: {
-        movie,
+        media,
       },
     });
 
     let pipe = new DatePipe('en');
-    let dateWithPipe = pipe.transform(movie.release_date, 'dd/MM/yyyy') || '';
+    let dateWithPipe = pipe.transform(media.release_date, 'dd/MM/yyyy') || '';
 
     expect(
       screen.getByRole('heading', { name: `Release date: ${dateWithPipe}` })
     ).toBeInTheDocument();
   });
 
-  it('should display movie poster path on render', async () => {
+  it('should display media poster path on render', async () => {
     await render(MediaCardComponent, {
       componentProperties: {
-        movie,
+        media,
         API_IMG_URL,
       },
     });
@@ -66,6 +66,6 @@ describe('Media Card', () => {
     expect(screen.getByAltText(/Media Card Image/)).toBeInTheDocument();
 
     const displayedImage = document.querySelector('img') as HTMLImageElement;
-    expect(displayedImage.src).toContain(`${movie.poster_path}`);
+    expect(displayedImage.src).toContain(`${media.poster_path}`);
   });
 });

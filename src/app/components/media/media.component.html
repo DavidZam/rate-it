@@ -1,10 +1,10 @@
 <app-media-page-title [title]="pageTitle" />
 
 <div class="movies-list row">
-  @for(movie of movies; track movie.id) {
+  @for(media of mediaContent; track media.id) {
   <div class="col-12 col-sm-6 col-md-4">
     <div class="m-2 card my-2 text-center">
-      <app-media-card [movie]="movie" />
+      <app-media-card [media]="media" />
     </div>
   </div>
   }

@@ -359,10 +359,10 @@ describe('MediaService', () => {
 
     const moviesService = new MediaService(httpClient);
 
-    moviesService.getPopularMovies().subscribe((response) => {
-      expect(moviesResult.results[0].title).toBe(response[0].title);
+    moviesService.getPopularMovies().subscribe((results) => {
+      expect(moviesResult.results[0].title).toBe(results.media[0].title);
       expect(moviesResult.results[0].release_date).toBe(
-        response[0].release_date
+        results.media[0].release_date
       );
     });
   });

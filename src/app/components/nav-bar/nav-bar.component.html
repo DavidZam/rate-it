@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light my-4">
   <div class="container">
     <ul class="navbar-nav">
-      @for(itemLink of navBarItemLinks; track itemLink) {
-      <app-nav-bar-link [itemLink]="itemLink" />
+      @for(navBarItem of navBarItemsArray; track navBarItem) {
+      <app-nav-bar-link [link]="navBarItem.link" [label]="navBarItem.label" />
       }
     </ul>
   </div>

@@ -9,5 +9,6 @@ import { RouterLink } from '@angular/router';
   styleUrl: './nav-bar-link.component.css',
 })
 export class NavBarLinkComponent {
-  @Input({ required: true }) itemLink = '';
+  @Input({ required: true }) link = '';
+  @Input({ required: true }) label = '';
 }

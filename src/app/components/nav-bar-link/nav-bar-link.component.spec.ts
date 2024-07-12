@@ -10,14 +10,16 @@ describe('NavBarLink', () => {
     });
   });
 
-  it('should display the nav bar item link with the first letter on upper case on render', async () => {
+  it('should display the nav bar item on render', async () => {
     await render(NavBarLinkComponent, {
       imports: [RouterLink],
       componentProperties: {
-        itemLink: 'link1',
+        link: 'awesome-page',
+        label: 'Awesome Page',
       },
     });
 
-    expect(screen.getByRole("link", { name: 'Link1' })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /Awesome Page/ })).toBeInTheDocument();
+
   });
 });

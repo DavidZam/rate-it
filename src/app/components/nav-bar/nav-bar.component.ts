@@ -7,8 +7,21 @@ import { NavBarLinkComponent } from '../nav-bar-link/nav-bar-link.component';
   standalone: true,
   imports: [RouterLink, NavBarLinkComponent],
   templateUrl: './nav-bar.component.html',
-  styleUrl: './nav-bar.component.css'
+  styleUrl: './nav-bar.component.css',
 })
 export class NavBarComponent {
-  navBarItemLinks = ['home', 'movies'];
+  navBarItems: Map<string, string> = new Map([
+    ['home', 'Home'],
+    ['popular-movies', 'Popular Movies'],
+    ['upcoming-movies', 'Upcoming Movies'],
+  ]);
+
+  navBarItemsArray: { link: string; label: string }[] = [];
+
+  ngOnInit() {
+    this.navBarItemsArray = Array.from(this.navBarItems, ([link, label]) => ({
+      link,
+      label,
+    }));
+  }
 }
