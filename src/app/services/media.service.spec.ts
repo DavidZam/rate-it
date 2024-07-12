@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import '@testing-library/jest-dom';
 import { of } from 'rxjs';
-import { MoviesService } from './movies.service';
+import { MediaService } from './media.service';
 
 const moviesResult = {
   page: 1,
@@ -351,13 +351,13 @@ const moviesResult = {
   total_results: 901177,
 };
 
-describe('MoviesService', () => {
+describe('MediaService', () => {
   it('should get a response from the fetch request', async () => {
     const httpClient: HttpClient = {
       get: (url: string) => of(moviesResult),
     } as any;
 
-    const moviesService = new MoviesService(httpClient);
+    const moviesService = new MediaService(httpClient);
 
     moviesService.getPopularMovies().subscribe((response) => {
       expect(moviesResult.results[0].title).toBe(response[0].title);

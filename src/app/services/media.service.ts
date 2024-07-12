@@ -1,11 +1,11 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Movie } from '../models/movie';
 
 @Injectable({
   providedIn: 'root',
 })
-export class MoviesService {
+export class MediaService {
   private movieBaseUrl: string = 'https://api.themoviedb.org/3/movie';
   private tvSeriesBaseUrl: string = 'https://api.themoviedb.org/3/tv';
 
@@ -27,7 +27,7 @@ export class MoviesService {
     return this.httpClient.get<Movie[]>(`${this.movieBaseUrl}/upcoming`);
   }
 
-  getPopularTvSeries() {
+  getNowPlayingTvSeries() {
     return this.httpClient.get<Movie[]>(`${this.tvSeriesBaseUrl}/now-playing`);
   }
 }
