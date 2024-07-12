@@ -9,5 +9,5 @@ import { NavBarComponent } from '../../components/nav-bar/nav-bar.component';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  homeComponentMsg = 'Hello';
+  homeComponentMsg = 'Hello! Welcome to Rate It!';
 }

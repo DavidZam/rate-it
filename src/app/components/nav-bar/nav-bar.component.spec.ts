@@ -2,12 +2,12 @@ import { RouterLink } from '@angular/router';
 import { render, screen } from '@testing-library/angular';
 import '@testing-library/jest-dom';
 import { NavBarComponent } from './nav-bar.component';
-import { NavBarItemComponent } from '../nav-bar-item/nav-bar-item.component';
+import { NavBarLinkComponent } from '../nav-bar-link/nav-bar-link.component';
 
 describe('NavBar', () => {
   it('should render the component', async () => {
     await render(NavBarComponent, {
-      imports: [RouterLink, NavBarItemComponent],
+      imports: [RouterLink, NavBarLinkComponent],
     });
   });
 
@@ -19,7 +19,7 @@ describe('NavBar', () => {
       },
     });
 
-    expect(screen.getByRole("link", { name: /link1/i })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /link2/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /link1/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /link2/i })).toBeInTheDocument();
   });
 });

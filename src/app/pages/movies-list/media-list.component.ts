@@ -1,12 +1,12 @@
 import { Component, inject } from '@angular/core';
+import { MediaCardComponent } from '../../components/media-card/media-card.component';
 import { Movie } from '../../models/movie';
 import { MoviesService } from '../../service/movies.service';
-import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-media-list',
   standalone: true,
-  imports: [DatePipe],
+  imports: [MediaCardComponent],
   templateUrl: './media-list.component.html',
   styleUrl: './media-list.component.css',
 })
