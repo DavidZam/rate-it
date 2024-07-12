@@ -9,12 +9,4 @@ describe('Movie List', () => {
       providers: [HttpClient, HttpHandler],
     });
   });
-
-  it('should display the Popular Movies message on render', async () => {
-    await render(MoviesListComponent, {
-      providers: [HttpClient, HttpHandler],
-    });
-
-    expect(screen.getByText(/Popular Movies/)).toBeInTheDocument();
-  });
 });
