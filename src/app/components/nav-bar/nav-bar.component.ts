@@ -13,7 +13,11 @@ export class NavBarComponent {
   navBarItems: Map<string, string> = new Map([
     ['home', 'Home'],
     ['popular-movies', 'Popular Movies'],
+    ['top-rated-movies', 'Top Rated Movies'],
     ['upcoming-movies', 'Upcoming Movies'],
+    ['popular-tv', 'Popular TV Series'],
+    ['top-rated-tv', 'Top Rated TV Series'],
+    ['airing-today-tv', 'Airing Today TV Series'],
   ]);
 
   navBarItemsArray: { link: string; label: string }[] = [];

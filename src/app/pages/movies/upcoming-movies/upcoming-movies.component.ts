@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
-import { MediaComponent } from '../../components/media/media.component';
-import { Media } from '../../models/media';
-import { MediaService } from '../../services/media.service';
+import { MediaComponent } from '../../../components/media/media.component';
+import { Media } from '../../../models/media';
+import { MediaService } from '../../../services/media.service';
 
 @Component({
   selector: 'app-upcoming-movies',
@@ -14,10 +14,10 @@ export class UpcomingMoviesComponent {
   pageTitle = '';
   mediaContent: Media[] = [];
 
-  moviesService = inject(MediaService);
+  mediaService = inject(MediaService);
 
   ngOnInit() {
-    this.moviesService.geUpcomingMovies().subscribe((results: { pageTitle: string, media: Media[]}) => {
+    this.mediaService.geUpcomingMovies().subscribe((results: { pageTitle: string, media: Media[]}) => {
       this.pageTitle = results.pageTitle;
       this.mediaContent = results.media;
     });

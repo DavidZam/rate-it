@@ -12,14 +12,6 @@ export class MediaService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getNowPlayingMovies() {
-    return this.httpClient.get<Media[]>(`${this.movieBaseUrl}/now-playing`);
-  }
-
-  getTopRatedMovies() {
-    return this.httpClient.get<Media[]>(`${this.movieBaseUrl}/top-rated`);
-  }
-
   getPopularMovies() {
     return this.httpClient.get<Media[]>(`${this.movieBaseUrl}/popular`).pipe(
       map((data: any) => {
@@ -42,7 +34,47 @@ export class MediaService {
     );
   }
 
-  getNowPlayingTvSeries() {
-    return this.httpClient.get<Media[]>(`${this.tvSeriesBaseUrl}/now-playing`);
+  getPopularTvSeries() {
+    return this.httpClient.get<Media[]>(`${this.tvSeriesBaseUrl}/popular`).pipe(
+      map((data: any) => {
+        return {
+          pageTitle: 'Popular TV Series',
+          media: data.results,
+        };
+      })
+    );
+  }
+
+  geTopRatedMovies() {
+    return this.httpClient.get<Media[]>(`${this.movieBaseUrl}/top_rated`).pipe(
+      map((data: any) => {
+        return {
+          pageTitle: 'Top Rated Movies',
+          media: data.results,
+        };
+      })
+    );
+  }
+
+  geTopRatedTvSeries() {
+    return this.httpClient.get<Media[]>(`${this.tvSeriesBaseUrl}/top_rated`).pipe(
+      map((data: any) => {
+        return {
+          pageTitle: 'Top Rated TV Series',
+          media: data.results,
+        };
+      })
+    );
+  }
+
+  getAiringTodayTvSeries() {
+    return this.httpClient.get<Media[]>(`${this.tvSeriesBaseUrl}/airing_today`).pipe(
+      map((data: any) => {
+        return {
+          pageTitle: 'Airing Today TV Series',
+          media: data.results,
+        };
+      })
+    );
   }
 }
