@@ -38,6 +38,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 - Crear componente footer en la carpeta shared/components.
 
+- Pensar si mostrar o no peliculas / tv-series si no tienen descripción o si les falta alguna propiedad.
+
 - Crear pipe personalizado para las fechas.
 
 - Crear una nueva página de login.
