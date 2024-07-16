@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { render, screen } from '@testing-library/angular';
 import '@testing-library/jest-dom';
 import { AppComponent } from './app.component';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
 
 describe('AppComponent', () => {
   it('should render the component', async () => {

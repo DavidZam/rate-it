@@ -36,4 +36,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 - Incorporar la nueva estructura de rutas general.
 
+- Crear componente footer en la carpeta shared/components.
+
+- Crear pipe personalizado para las fechas.
+
 - Crear una nueva página de login.
