@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
-import { Media } from '../models/media';
+import { Media } from '../models/media.interface';
 
 @Injectable({
   providedIn: 'root',

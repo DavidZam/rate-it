@@ -1,7 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { render, screen } from '@testing-library/angular';
 import '@testing-library/jest-dom';
-import { Media } from '../../models/media';
+import { Media } from '../../core/models/media.interface';
 import { MediaCardComponent } from './media-card.component';
 
 const media: Media = {

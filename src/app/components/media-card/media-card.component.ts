@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Media } from '../../models/media';
+import { Media } from '../../core/models/media.interface';
 import { DatePipe } from '@angular/common';
 
 @Component({

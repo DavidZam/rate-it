@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { MediaComponent } from '../../../components/media/media.component';
-import { Media } from '../../../models/media';
-import { MediaService } from '../../../services/media.service';
+import { Media } from '../../../core/models/media.interface';
+import { MediaService } from '../../../core/services/media.service';
 
 @Component({
   selector: 'app-top-rated-tv-series',
