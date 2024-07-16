@@ -25,3 +25,15 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+# ☄️ Roadmap
+
+- ~~Organizar todos los ficheros que no esten relacionados con el UI de la aplicación dentro de una carpeta 'core'~~
+
+- Re-estructurar la organización de carpetas del proyecto.
+
+- Meditar sobre la distinción de interfaces y modelos segun las entidades que existan en la aplicación.
+
+- Incorporar la nueva estructura de rutas general.
+
+- Crear una nueva página de login.
