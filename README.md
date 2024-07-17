@@ -30,6 +30,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 - ~~Organizar todos los ficheros que no esten relacionados con el UI de la aplicación dentro de una carpeta 'core'~~
 
+- ~~Crear pipe personalizado para las fechas.~~
+
 - Re-estructurar la organización de carpetas del proyecto.
 
 - Meditar sobre la distinción de interfaces y modelos segun las entidades que existan en la aplicación.
@@ -39,7 +41,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - Crear componente footer en la carpeta shared/components.
 
 - Pensar si mostrar o no peliculas / tv-series si no tienen descripción o si les falta alguna propiedad.
-
-- Crear pipe personalizado para las fechas.
 
 - Crear una nueva página de login.

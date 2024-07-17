@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { Media } from '../../core/models/media.interface';
 import { DatePipe } from '@angular/common';
+import { DateFormatPipe } from '../../shared/pipes/date-pipe.pipe';
 
 @Component({
   selector: 'app-media-card',
   standalone: true,
-  imports: [DatePipe],
+  imports: [DateFormatPipe],
   templateUrl: './media-card.component.html',
   styleUrl: './media-card.component.css'
 })
