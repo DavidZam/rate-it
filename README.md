@@ -32,6 +32,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 - ~~Crear pipe personalizado para las fechas.~~
 
+- Añadir filtro para filtrar por lenguaje / region.
+
 - Re-estructurar la organización de carpetas del proyecto.
 
 - Meditar sobre la distinción de interfaces y modelos segun las entidades que existan en la aplicación.
