@@ -1,20 +1,27 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { PopularMoviesComponent } from './pages/movies/popular-movies/popular-movies.component';
-import { UpcomingMoviesComponent } from './pages/movies/upcoming-movies/upcoming-movies.component';
-import { PopularTvSeriesComponent } from './pages/tv-series/popular-tv-series/popular-tv-series.component';
-import { TopRatedTvSeriesComponent } from './pages/tv-series/top-rated-tv-series/top-rated-tv-series.component';
-import { TopRatedMoviesComponent } from './pages/movies/top-rated-movies/top-rated-movies.component';
-import { AiringTodayTvSeriesComponent } from './pages/tv-series/airing-today-tv-series/airing-today-tv-series.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'popular-movies', component: PopularMoviesComponent },
-  { path: 'upcoming-movies', component: UpcomingMoviesComponent },
-  { path: 'popular-tv', component: PopularTvSeriesComponent },
-  { path: 'top-rated-tv', component: TopRatedTvSeriesComponent },
-  { path: 'top-rated-movies', component: TopRatedMoviesComponent },
-  { path: 'top-rated-tv', component: TopRatedTvSeriesComponent },
-  { path: 'airing-today-tv', component: AiringTodayTvSeriesComponent },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
+  // Directly lazy loading the Home standalone component
+  {
+    path: 'home',
+    loadComponent: () =>
+      import('./pages/home/home.component').then((m) => m.HomeComponent),
+  },
+  // Lazy loading the Movies routing configuration
+  {
+    path: 'movies',
+    loadChildren: () =>
+      import('./pages/movies/movies.routes').then((m) => m.MOVIES_ROUTES),
+  },
+  // Lazy loading the TV Series routing configuration
+  {
+    path: 'tv',
+    loadChildren: () =>
+      import('./pages/tv-series/tv.routes').then((m) => m.TV_ROUTES),
+  },
 ];

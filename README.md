@@ -22,6 +22,8 @@ Run `ng test` to execute the unit tests via [Jest](https://github.com/jestjs/jes
 
 - ~~Actualizar descripción proyecto README~~
 
+- ~~Incorporar la nueva estructura de rutas general.~~
+
 - Añadir filtro para filtrar por lenguaje / region.
 
 - Re-estructurar la organización de carpetas del proyecto.

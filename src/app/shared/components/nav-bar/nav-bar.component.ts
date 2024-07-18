@@ -12,12 +12,12 @@ import { NavBarLinkComponent } from '../nav-bar-link/nav-bar-link.component';
 export class NavBarComponent {
   navBarItems: Map<string, string> = new Map([
     ['home', 'Home'],
-    ['popular-movies', 'Popular Movies'],
-    ['top-rated-movies', 'Top Rated Movies'],
-    ['upcoming-movies', 'Upcoming Movies'],
-    ['popular-tv', 'Popular TV Series'],
-    ['top-rated-tv', 'Top Rated TV Series'],
-    ['airing-today-tv', 'Airing Today TV Series'],
+    ['movies/popular', 'Popular Movies'],
+    ['movies/top-rated', 'Top Rated Movies'],
+    ['movies/upcoming', 'Upcoming Movies'],
+    ['tv/popular', 'Popular TV Series'],
+    ['tv/top-rated', 'Top Rated TV Series'],
+    ['tv/airing-today', 'Airing Today TV Series'],
   ]);
 
   navBarItemsArray: { link: string; label: string }[] = [];
