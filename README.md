@@ -24,11 +24,11 @@ Run `ng test` to execute the unit tests via [Jest](https://github.com/jestjs/jes
 
 - ~~Incorporar la nueva estructura de rutas general.~~
 
+- ~~Meditar sobre la distinción de interfaces y modelos segun las entidades que existan en la aplicación.~~
+
 - Añadir filtro para filtrar por lenguaje / region.
 
 - Re-estructurar la organización de carpetas del proyecto.
-
-- Meditar sobre la distinción de interfaces y modelos segun las entidades que existan en la aplicación.
 
 - Crear componente footer en la carpeta shared/components.
 
