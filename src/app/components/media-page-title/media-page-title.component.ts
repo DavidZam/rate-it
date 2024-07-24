@@ -5,8 +5,8 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './media-page-title.component.html',
-  styleUrl: './media-page-title.component.css'
+  styleUrl: './media-page-title.component.css',
 })
 export class MediaPageTitleComponent {
-  @Input({ required: true}) title = '';
+  @Input({ required: true }) title = '';
 }

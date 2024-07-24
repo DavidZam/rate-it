@@ -8,7 +8,7 @@ import { MediaService } from '../../../core/services/media.service';
   standalone: true,
   imports: [MediaComponent],
   templateUrl: './upcoming-movies.component.html',
-  styleUrl: './upcoming-movies.component.css'
+  styleUrl: './upcoming-movies.component.css',
 })
 export class UpcomingMoviesComponent {
   pageTitle = '';
@@ -17,9 +17,11 @@ export class UpcomingMoviesComponent {
   mediaService = inject(MediaService);
 
   ngOnInit() {
-    this.mediaService.geUpcomingMovies().subscribe((results: { pageTitle: string, media: Media[]}) => {
-      this.pageTitle = results.pageTitle;
-      this.mediaContent = results.media;
-    });
+    this.mediaService
+      .geUpcomingMovies()
+      .subscribe((results: { pageTitle: string; media: Media[] }) => {
+        this.pageTitle = results.pageTitle;
+        this.mediaContent = results.media;
+      });
   }
 }

@@ -6,7 +6,7 @@ import { NavBarComponent } from '../../shared/components/nav-bar/nav-bar.compone
   standalone: true,
   imports: [NavBarComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
 })
 export class HomeComponent {
   homeComponentMsg = 'Hello! Welcome to Rate It!';

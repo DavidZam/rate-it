@@ -8,7 +8,7 @@ import { MediaService } from '../../../core/services/media.service';
   standalone: true,
   imports: [MediaComponent],
   templateUrl: './airing-today-tv-series.component.html',
-  styleUrl: './airing-today-tv-series.component.css'
+  styleUrl: './airing-today-tv-series.component.css',
 })
 export class AiringTodayTvSeriesComponent {
   pageTitle = '';

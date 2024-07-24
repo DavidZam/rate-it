@@ -1,14 +1,14 @@
 import { Component, inject } from '@angular/core';
+import { MediaComponent } from '../../../components/media/media.component';
 import { Media } from '../../../core/models/media.interface';
 import { MediaService } from '../../../core/services/media.service';
-import { MediaComponent } from '../../../components/media/media.component';
 
 @Component({
   selector: 'app-popular-tv-series',
   standalone: true,
   imports: [MediaComponent],
   templateUrl: './popular-tv-series.component.html',
-  styleUrl: './popular-tv-series.component.css'
+  styleUrl: './popular-tv-series.component.css',
 })
 export class PopularTvSeriesComponent {
   pageTitle = '';

@@ -8,7 +8,7 @@ import { MediaService } from '../../../core/services/media.service';
   standalone: true,
   imports: [MediaComponent],
   templateUrl: './top-rated-movies.component.html',
-  styleUrl: './top-rated-movies.component.css'
+  styleUrl: './top-rated-movies.component.css',
 })
 export class TopRatedMoviesComponent {
   pageTitle = '';

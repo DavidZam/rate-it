@@ -7,7 +7,7 @@ import { DateFormatPipe } from '../../shared/pipes/date-pipe.pipe';
   standalone: true,
   imports: [DateFormatPipe],
   templateUrl: './media-card.component.html',
-  styleUrl: './media-card.component.css'
+  styleUrl: './media-card.component.css',
 })
 export class MediaCardComponent {
   API_IMG_URL = 'https://image.tmdb.org/t/p/w500';
