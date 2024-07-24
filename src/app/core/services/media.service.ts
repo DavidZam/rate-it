@@ -31,9 +31,11 @@ export class MediaService {
 
   geUpcomingMovies(): Observable<{ pageTitle: string; media: Media[] }> {
     return this.httpClient
-      .get<Media[]>(`${this.movieBaseUrl}/upcoming${this.extraParameters}`)
+      .get<{ results: Media[] }>(
+        `${this.movieBaseUrl}/upcoming${this.extraParameters}`
+      )
       .pipe(
-        map((data: any) => {
+        map((data) => {
           return {
             pageTitle: 'Upcoming Movies',
             media: data.results,
@@ -44,7 +46,9 @@ export class MediaService {
 
   getPopularTvSeries(): Observable<{ pageTitle: string; media: Media[] }> {
     return this.httpClient
-      .get<Media[]>(`${this.tvSeriesBaseUrl}/popular${this.extraParameters}`)
+      .get<{ results: Media[] }>(
+        `${this.tvSeriesBaseUrl}/popular${this.extraParameters}`
+      )
       .pipe(
         map((data: any) => {
           return {
@@ -57,7 +61,9 @@ export class MediaService {
 
   geTopRatedMovies(): Observable<{ pageTitle: string; media: Media[] }> {
     return this.httpClient
-      .get<Media[]>(`${this.movieBaseUrl}/top_rated${this.extraParameters}`)
+      .get<{ results: Media[] }>(
+        `${this.movieBaseUrl}/top_rated${this.extraParameters}`
+      )
       .pipe(
         map((data: any) => {
           return {
@@ -70,7 +76,9 @@ export class MediaService {
 
   geTopRatedTvSeries(): Observable<{ pageTitle: string; media: Media[] }> {
     return this.httpClient
-      .get<Media[]>(`${this.tvSeriesBaseUrl}/top_rated${this.extraParameters}`)
+      .get<{ results: Media[] }>(
+        `${this.tvSeriesBaseUrl}/top_rated${this.extraParameters}`
+      )
       .pipe(
         map((data: any) => {
           return {
@@ -83,7 +91,7 @@ export class MediaService {
 
   getAiringTodayTvSeries(): Observable<{ pageTitle: string; media: Media[] }> {
     return this.httpClient
-      .get<Media[]>(
+      .get<{ results: Media[] }>(
         `${this.tvSeriesBaseUrl}/airing_today${this.extraParameters}`
       )
       .pipe(
