@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Media } from '../models/media.interface';
 
 @Injectable({
@@ -14,11 +14,13 @@ export class MediaService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getPopularMovies() {
+  getPopularMovies(): Observable<{ pageTitle: string; media: Media[] }> {
     return this.httpClient
-      .get<Media[]>(`${this.movieBaseUrl}/popular${this.extraParameters}`)
+      .get<{ results: Media[] }>(
+        `${this.movieBaseUrl}/popular${this.extraParameters}`
+      )
       .pipe(
-        map((data: any) => {
+        map((data) => {
           return {
             pageTitle: 'Popular Movies',
             media: data.results,
@@ -27,7 +29,7 @@ export class MediaService {
       );
   }
 
-  geUpcomingMovies() {
+  geUpcomingMovies(): Observable<{ pageTitle: string; media: Media[] }> {
     return this.httpClient
       .get<Media[]>(`${this.movieBaseUrl}/upcoming${this.extraParameters}`)
       .pipe(
@@ -40,7 +42,7 @@ export class MediaService {
       );
   }
 
-  getPopularTvSeries() {
+  getPopularTvSeries(): Observable<{ pageTitle: string; media: Media[] }> {
     return this.httpClient
       .get<Media[]>(`${this.tvSeriesBaseUrl}/popular${this.extraParameters}`)
       .pipe(
@@ -53,7 +55,7 @@ export class MediaService {
       );
   }
 
-  geTopRatedMovies() {
+  geTopRatedMovies(): Observable<{ pageTitle: string; media: Media[] }> {
     return this.httpClient
       .get<Media[]>(`${this.movieBaseUrl}/top_rated${this.extraParameters}`)
       .pipe(
@@ -66,7 +68,7 @@ export class MediaService {
       );
   }
 
-  geTopRatedTvSeries() {
+  geTopRatedTvSeries(): Observable<{ pageTitle: string; media: Media[] }> {
     return this.httpClient
       .get<Media[]>(`${this.tvSeriesBaseUrl}/top_rated${this.extraParameters}`)
       .pipe(
@@ -79,7 +81,7 @@ export class MediaService {
       );
   }
 
-  getAiringTodayTvSeries() {
+  getAiringTodayTvSeries(): Observable<{ pageTitle: string; media: Media[] }> {
     return this.httpClient
       .get<Media[]>(
         `${this.tvSeriesBaseUrl}/airing_today${this.extraParameters}`
