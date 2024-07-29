@@ -1,12 +1,12 @@
-import { DatePipe } from "@angular/common";
+import { DatePipe } from '@angular/common';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'dateFormat',
   standalone: true,
 })
-export class DateFormatPipe extends DatePipe implements PipeTransform {
-  override transform(value: any): any {
-    return super.transform(value, 'dd/MM/yyyy');
+export class DateFormatPipe implements PipeTransform {
+  transform(value: string | undefined): string | null {
+    return new DatePipe('es').transform(value, 'dd/MM/yyyy');
   }
 }

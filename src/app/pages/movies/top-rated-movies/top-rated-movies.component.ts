@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { MediaComponent } from '../../../components/media/media.component';
 import { Media } from '../../../core/models/media.interface';
 import { MediaService } from '../../../core/services/media.service';
@@ -10,7 +10,7 @@ import { MediaService } from '../../../core/services/media.service';
   templateUrl: './top-rated-movies.component.html',
   styleUrl: './top-rated-movies.component.css',
 })
-export class TopRatedMoviesComponent {
+export class TopRatedMoviesComponent implements OnInit {
   pageTitle = '';
   mediaContent: Media[] = [];
 

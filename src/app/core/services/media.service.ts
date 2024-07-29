@@ -50,7 +50,7 @@ export class MediaService {
         `${this.tvSeriesBaseUrl}/popular${this.extraParameters}`
       )
       .pipe(
-        map((data: any) => {
+        map((data) => {
           return {
             pageTitle: 'Popular TV Series',
             media: data.results,
@@ -65,7 +65,7 @@ export class MediaService {
         `${this.movieBaseUrl}/top_rated${this.extraParameters}`
       )
       .pipe(
-        map((data: any) => {
+        map((data) => {
           return {
             pageTitle: 'Top Rated Movies',
             media: data.results,
@@ -80,7 +80,7 @@ export class MediaService {
         `${this.tvSeriesBaseUrl}/top_rated${this.extraParameters}`
       )
       .pipe(
-        map((data: any) => {
+        map((data) => {
           return {
             pageTitle: 'Top Rated TV Series',
             media: data.results,
@@ -95,7 +95,7 @@ export class MediaService {
         `${this.tvSeriesBaseUrl}/airing_today${this.extraParameters}`
       )
       .pipe(
-        map((data: any) => {
+        map((data) => {
           return {
             pageTitle: 'Airing Today TV Series',
             media: data.results,

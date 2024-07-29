@@ -1,6 +1,5 @@
-import { TestBed } from '@angular/core/testing';
 import { RouterOutlet } from '@angular/router';
-import { render, screen } from '@testing-library/angular';
+import { render } from '@testing-library/angular';
 import '@testing-library/jest-dom';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';

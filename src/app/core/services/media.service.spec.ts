@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
+import { TestBed } from '@angular/core/testing';
 import '@testing-library/jest-dom';
-import { of } from 'rxjs';
+import { of } from 'rxjs/internal/observable/of';
 import { MediaService } from './media.service';
 
 const moviesResult = {
@@ -353,11 +354,16 @@ const moviesResult = {
 
 describe('MediaService', () => {
   it('should get a response from the fetch request', async () => {
-    const httpClient: HttpClient = {
-      get: (url: string) => of(moviesResult),
-    } as any;
+    TestBed.configureTestingModule({
+      providers: [
+        MediaService,
+        { provide: HttpClient, useValue: { get: () => of(moviesResult) } },
+      ],
+    });
 
-    const moviesService = new MediaService(httpClient);
+    const http: HttpClient = TestBed.inject(HttpClient);
+
+    const moviesService = new MediaService(http);
 
     moviesService.getPopularMovies().subscribe((results) => {
       expect(moviesResult.results[0].title).toBe(results.media[0].title);

@@ -1,4 +1,5 @@
-import { DatePipe } from '@angular/common';
+import { DatePipe, registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
 import { render, screen } from '@testing-library/angular';
 import '@testing-library/jest-dom';
 import { Media } from '../../core/models/media.interface';
@@ -26,6 +27,8 @@ const media: Media = {
 };
 
 const API_IMG_URL = 'https://image.tmdb.org/t/p/w500';
+
+registerLocaleData(localeEs);
 
 describe('Media Card', () => {
   it('should render the component', async () => {
@@ -60,8 +63,8 @@ describe('Media Card', () => {
       },
     });
 
-    let pipe = new DatePipe('en');
-    let dateWithPipe = pipe.transform(media.release_date, 'dd/MM/yyyy') || '';
+    const pipe = new DatePipe('en');
+    const dateWithPipe = pipe.transform(media.release_date, 'dd/MM/yyyy') || '';
 
     expect(
       screen.getByRole('heading', { name: `Release date: ${dateWithPipe}` })

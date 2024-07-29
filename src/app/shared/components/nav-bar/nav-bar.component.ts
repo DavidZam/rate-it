@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NavBarLinkComponent } from '../nav-bar-link/nav-bar-link.component';
 
@@ -9,7 +9,7 @@ import { NavBarLinkComponent } from '../nav-bar-link/nav-bar-link.component';
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css',
 })
-export class NavBarComponent {
+export class NavBarComponent implements OnInit {
   navBarItems: Map<string, string> = new Map([
     ['home', 'Home'],
     ['movies/popular', 'Popular Movies'],
