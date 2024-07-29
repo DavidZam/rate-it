@@ -26,6 +26,8 @@ Run `ng test` to execute the unit tests via [Jest](https://github.com/jestjs/jes
 
 - ~~Meditar sobre la distinción de interfaces y modelos segun las entidades que existan en la aplicación.~~
 
+- Añadir suite de tests con Cypress.
+
 - Añadir filtro para filtrar por lenguaje / region.
 
 - Re-estructurar la organización de carpetas del proyecto.
