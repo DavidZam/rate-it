@@ -26,6 +26,10 @@ Run `ng test` to execute the unit tests via [Jest](https://github.com/jestjs/jes
 
 - ~~Meditar sobre la distinción de interfaces y modelos segun las entidades que existan en la aplicación.~~
 
+- ~~Añadir configuración de linter y script a utilizar.~~
+
+- ~~Añadir configuración de Husky y hook con pre-commit.~~
+
 - Añadir suite de tests con Cypress.
 
 - Añadir filtro para filtrar por lenguaje / region.
