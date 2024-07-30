@@ -1,9 +1,10 @@
 import { HttpInterceptorFn } from '@angular/common/http';
+import { environment } from '../../../../env/environment';
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const authReq = req.clone({
     setParams: {
-      api_key: '1539cbd16c76917a29853c246d77a4eb',
+      api_key: environment.API_KEY,
     },
   });
 
