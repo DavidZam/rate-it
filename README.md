@@ -30,6 +30,8 @@ Run `ng test` to execute the unit tests via [Jest](https://github.com/jestjs/jes
 
 - ~~Añadir configuración de Husky y hook con pre-commit.~~
 
+ - Añadir configuración para almacenar los secrets de forma segura en un fichero de entorno.
+
 - Añadir suite de tests con Cypress.
 
 - Añadir filtro para filtrar por lenguaje / region.
