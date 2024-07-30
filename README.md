@@ -32,6 +32,8 @@ Run `ng test` to execute the unit tests via [Jest](https://github.com/jestjs/jes
 
  - ~~Añadir configuración para almacenar los secrets de forma segura en un fichero de entorno.~~
 
+- Añadir configuración inicial de tests e2e con Cypress.
+
 - Añadir suite de tests con Cypress.
 
 - Añadir filtro para filtrar por lenguaje / region.
