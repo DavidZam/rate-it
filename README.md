@@ -16,34 +16,34 @@ Run `ng test` to execute the unit tests via [Jest](https://github.com/jestjs/jes
 
 # ☄️ Roadmap
 
-- ~~Organizar todos los ficheros que no esten relacionados con el UI de la aplicación dentro de una carpeta 'core'~~
+- ~~Organise all files that are not related to the UI of the application into a ‘core’ folder.~~
 
-- ~~Crear pipe personalizado para las fechas.~~
+- ~~Create custom pipe for dates.~~
 
-- ~~Actualizar descripción proyecto README~~
+- ~~Update README project description~~
 
-- ~~Incorporar la nueva estructura de rutas general.~~
+- ~~Incorporate the new general route structure.~~
 
-- ~~Meditar sobre la distinción de interfaces y modelos segun las entidades que existan en la aplicación.~~
+- ~~Meditate on the distinction of interfaces and models according to the entities that exist in the application..~~
 
-- ~~Añadir configuración de linter y script a utilizar.~~
+- ~~Add linter configuration and script to use.~~
 
-- ~~Añadir configuración de Husky y hook con pre-commit.~~
+- ~~Add Husky configuration and hook with pre-commit.~~
 
- - ~~Añadir configuración para almacenar los secrets de forma segura en un fichero de entorno.~~
+ - ~~Add configuration for storing secrets securely in an environment file.~~
 
-- ~~Añadir configuración inicial de tests e2e con Cypress.~~
+- ~~Add initial e2e test setup with Cypress.~~
 
-- ~~Añadir suite de tests con Cypress.~~
+- ~~Add test suite with Cypress.~~
 
-- Añadir filtro para filtrar por lenguaje / region.
+- Add filter to filter by language / region.
 
-- Re-estructurar la organización de carpetas del proyecto.
+- Restructuring the organisation of project folders.
 
-- Crear componente footer en la carpeta shared/components.
+- Create footer component in the folder shared/components.
 
-- Pensar si mostrar o no peliculas / tv-series si no tienen descripción o si les falta alguna propiedad.
+- Think about whether or not to show films / tv-series if they have no description or if they are missing some property.
 
-- Crear una nueva página de login.
+- Create a new login page.
 
-- Crear un fichero .yaml que ejecute los test unitarios.
+- Create a .yaml file that executes the unit tests.
