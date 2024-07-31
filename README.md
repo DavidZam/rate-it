@@ -34,7 +34,7 @@ Run `ng test` to execute the unit tests via [Jest](https://github.com/jestjs/jes
 
 - ~~Añadir configuración inicial de tests e2e con Cypress.~~
 
-- Añadir suite de tests con Cypress.
+- ~~Añadir suite de tests con Cypress.~~
 
 - Añadir filtro para filtrar por lenguaje / region.
 
