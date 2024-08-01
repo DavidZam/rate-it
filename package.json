@@ -14,8 +14,9 @@
     "test:coverage": "jest --coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "cypress:open": "cypress open",
-    "e2e:headless": "cypress run"
+    "e2e:headless": "run-p start cypress:run",
+    "cypress:run": "cypress run",
+    "cypress:open": "cypress open"
   },
   "private": true,
   "dependencies": {
