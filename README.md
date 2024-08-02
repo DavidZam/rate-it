@@ -47,3 +47,5 @@ Run `ng test` to execute the unit tests via [Jest](https://github.com/jestjs/jes
 - Create a new login page.
 
 - Create a .yaml file that executes the unit tests.
+
+- Test and investigate an Angular interceptor for the cache.
