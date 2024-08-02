@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import type { ApiResponse } from '../models/api-response';
 
 @Injectable({
@@ -14,26 +14,26 @@ export class MediaService {
   constructor(private httpClient: HttpClient) {}
 
   getPopularMovies(): Observable<ApiResponse> {
-    return this.httpClient.get<ApiResponse>(`${this.movieBaseUrl}/popular${this.extraParameters}`).pipe(map((data) => data));
+    return this.httpClient.get<ApiResponse>(`${this.movieBaseUrl}/popular${this.extraParameters}`);
   }
 
   geUpcomingMovies(): Observable<ApiResponse> {
-    return this.httpClient.get<ApiResponse>(`${this.movieBaseUrl}/upcoming${this.extraParameters}`).pipe(map((data) => data));
+    return this.httpClient.get<ApiResponse>(`${this.movieBaseUrl}/upcoming${this.extraParameters}`);
   }
 
   getPopularTvSeries(): Observable<ApiResponse> {
-    return this.httpClient.get<ApiResponse>(`${this.tvSeriesBaseUrl}/popular${this.extraParameters}`).pipe(map((data) => data));
+    return this.httpClient.get<ApiResponse>(`${this.tvSeriesBaseUrl}/popular${this.extraParameters}`);
   }
 
   geTopRatedMovies(): Observable<ApiResponse> {
-    return this.httpClient.get<ApiResponse>(`${this.movieBaseUrl}/top_rated${this.extraParameters}`).pipe(map((data) => data));
+    return this.httpClient.get<ApiResponse>(`${this.movieBaseUrl}/top_rated${this.extraParameters}`);
   }
 
   geTopRatedTvSeries(): Observable<ApiResponse> {
-    return this.httpClient.get<ApiResponse>(`${this.tvSeriesBaseUrl}/top_rated${this.extraParameters}`).pipe(map((data) => data));
+    return this.httpClient.get<ApiResponse>(`${this.tvSeriesBaseUrl}/top_rated${this.extraParameters}`);
   }
 
   getAiringTodayTvSeries(): Observable<ApiResponse> {
-    return this.httpClient.get<ApiResponse>(`${this.tvSeriesBaseUrl}/top_rated${this.extraParameters}`).pipe(map((data) => data));
+    return this.httpClient.get<ApiResponse>(`${this.tvSeriesBaseUrl}/top_rated${this.extraParameters}`);
   }
 }
