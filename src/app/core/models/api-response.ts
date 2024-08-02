@@ -1,4 +1,4 @@
-import { Media } from './media.interface';
+import type { Media } from './media.interface';
 
 export type ApiResponse = {
   page: number;

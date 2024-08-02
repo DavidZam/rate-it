@@ -2,7 +2,7 @@ import { DatePipe, registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
 import { render, screen } from '@testing-library/angular';
 import '@testing-library/jest-dom';
-import { Media } from '../../core/models/media.interface';
+import type { Media } from '../../core/models/media.interface';
 import { MediaCardComponent } from './media-card.component';
 
 const media: Media = {

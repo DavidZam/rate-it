@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { MediaComponent } from '../../../components/media/media.component';
 import type { ApiResponse } from '../../../core/models/api-response';
-import { Media } from '../../../core/models/media.interface';
+import type { Media } from '../../../core/models/media.interface';
 import { MediaService } from '../../../core/services/media.service';
 
 @Component({
