@@ -82,8 +82,7 @@ const moviesResult = {
       id: 280180,
       original_language: 'en',
       original_title: 'Beverly Hills Cop: Axel F',
-      overview:
-        'Forty years after his unforgettable first case in Beverly Hills, Detroit cop Axel Foley returns to do what he does best: solve crimes and cause chaos.',
+      overview: 'Forty years after his unforgettable first case in Beverly Hills, Detroit cop Axel Foley returns to do what he does best: solve crimes and cause chaos.',
       popularity: 1675.379,
       poster_path: '/zszRKfzjM5jltiq8rk6rasKVpUv.jpg',
       release_date: '2024-06-20',
@@ -116,8 +115,7 @@ const moviesResult = {
       id: 573435,
       original_language: 'en',
       original_title: 'Bad Boys: Ride or Die',
-      overview:
-        'After their late former Captain is framed, Lowrey and Burnett try to clear his name, only to end up on the run themselves.',
+      overview: 'After their late former Captain is framed, Lowrey and Burnett try to clear his name, only to end up on the run themselves.',
       popularity: 1332.888,
       poster_path: '/nP6RliHjxsz4irTKsxe8FRhKZYl.jpg',
       release_date: '2024-06-05',
@@ -150,8 +148,7 @@ const moviesResult = {
       id: 823464,
       original_language: 'en',
       original_title: 'Godzilla x Kong: The New Empire',
-      overview:
-        'Following their explosive showdown, Godzilla and Kong must reunite against a colossal undiscovered threat hidden within our world, challenging their very existence – and our own.',
+      overview: 'Following their explosive showdown, Godzilla and Kong must reunite against a colossal undiscovered threat hidden within our world, challenging their very existence – and our own.',
       popularity: 998.994,
       poster_path: '/z1p34vh7dEOnLDmyCrlUVLuoDzd.jpg',
       release_date: '2024-03-27',
@@ -167,8 +164,7 @@ const moviesResult = {
       id: 1001311,
       original_language: 'fr',
       original_title: 'Sous la Seine',
-      overview:
-        'In order to save Paris from an international bloodbath, a grieving scientist is forced to face her tragic past when a giant shark appears in the Seine.',
+      overview: 'In order to save Paris from an international bloodbath, a grieving scientist is forced to face her tragic past when a giant shark appears in the Seine.',
       popularity: 966.783,
       poster_path: '/qZPLK5ktRKa3CL4sKRZtj8UlPYc.jpg',
       release_date: '2024-06-04',
@@ -184,8 +180,7 @@ const moviesResult = {
       id: 704673,
       original_language: 'en',
       original_title: 'Trigger Warning',
-      overview:
-        "A Special Forces commando uncovers a dangerous conspiracy when she returns to her hometown looking for answers into her beloved father's death.",
+      overview: "A Special Forces commando uncovers a dangerous conspiracy when she returns to her hometown looking for answers into her beloved father's death.",
       popularity: 707.739,
       poster_path: '/lJN24nn28s5afC1UnLPYRgYOp1K.jpg',
       release_date: '2024-06-20',
@@ -201,8 +196,7 @@ const moviesResult = {
       id: 929590,
       original_language: 'en',
       original_title: 'Civil War',
-      overview:
-        'In the near future, a group of war journalists attempt to survive while reporting the truth as the United States stands on the brink of civil war.',
+      overview: 'In the near future, a group of war journalists attempt to survive while reporting the truth as the United States stands on the brink of civil war.',
       popularity: 751.248,
       poster_path: '/sh7Rg8Er3tFcN9BpKIPOMvALgZd.jpg',
       release_date: '2024-04-10',
@@ -218,8 +212,7 @@ const moviesResult = {
       id: 762441,
       original_language: 'en',
       original_title: 'A Quiet Place: Day One',
-      overview:
-        'As New York City is invaded by alien creatures who hunt by sound, a woman named Sam fights to survive.',
+      overview: 'As New York City is invaded by alien creatures who hunt by sound, a woman named Sam fights to survive.',
       popularity: 748.48,
       poster_path: '/yrpPYKijwdMHyTGIOd1iK1h0Xno.jpg',
       release_date: '2024-06-26',
@@ -252,8 +245,7 @@ const moviesResult = {
       id: 1016346,
       original_language: 'bn',
       original_title: 'MR-9: Do or Die',
-      overview:
-        'Masud Rana is a Secret Agent with code name MR-9 of the Bangladesh Counter Intelligence Agency',
+      overview: 'Masud Rana is a Secret Agent with code name MR-9 of the Bangladesh Counter Intelligence Agency',
       popularity: 635.086,
       poster_path: '/yF2g3MDacpZTMywh97qghW6Y0H4.jpg',
       release_date: '2023-08-25',
@@ -355,21 +347,16 @@ const moviesResult = {
 describe('MediaService', () => {
   it('should get a response from the fetch request', async () => {
     TestBed.configureTestingModule({
-      providers: [
-        MediaService,
-        { provide: HttpClient, useValue: { get: () => of(moviesResult) } },
-      ],
+      providers: [MediaService, { provide: HttpClient, useValue: { get: () => of(moviesResult) } }],
     });
 
     const http: HttpClient = TestBed.inject(HttpClient);
 
     const moviesService = new MediaService(http);
 
-    moviesService.getPopularMovies().subscribe((results) => {
-      expect(moviesResult.results[0].title).toBe(results.media[0].title);
-      expect(moviesResult.results[0].release_date).toBe(
-        results.media[0].release_date
-      );
+    moviesService.getPopularMovies().subscribe((data) => {
+      expect(moviesResult.results[0].title).toBe(data.results[0].title);
+      expect(moviesResult.results[0].release_date).toBe(data.results[0].release_date);
     });
   });
 });

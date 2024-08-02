@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { MediaComponent } from '../../../components/media/media.component';
+import { ApiResponse } from '../../../core/models/api-response';
 import { Media } from '../../../core/models/media.interface';
 import { MediaService } from '../../../core/services/media.service';
 
@@ -17,11 +18,9 @@ export class PopularTvSeriesComponent implements OnInit {
   mediaService = inject(MediaService);
 
   ngOnInit() {
-    this.mediaService
-      .getPopularTvSeries()
-      .subscribe((results: { pageTitle: string; media: Media[] }) => {
-        this.pageTitle = results.pageTitle;
-        this.mediaContent = results.media;
-      });
+    this.mediaService.getPopularTvSeries().subscribe((data: ApiResponse) => {
+      this.pageTitle = 'Popular TV Series';
+      this.mediaContent = data.results;
+    });
   }
 }

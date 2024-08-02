@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { MediaComponent } from '../../../components/media/media.component';
+import type { ApiResponse } from '../../../core/models/api-response';
 import { Media } from '../../../core/models/media.interface';
 import { MediaService } from '../../../core/services/media.service';
 
@@ -17,11 +18,9 @@ export class UpcomingMoviesComponent implements OnInit {
   mediaService = inject(MediaService);
 
   ngOnInit() {
-    this.mediaService
-      .geUpcomingMovies()
-      .subscribe((results: { pageTitle: string; media: Media[] }) => {
-        this.pageTitle = results.pageTitle;
-        this.mediaContent = results.media;
-      });
+    this.mediaService.geUpcomingMovies().subscribe((data: ApiResponse) => {
+      this.pageTitle = 'Upcoming Movies';
+      this.mediaContent = data.results;
+    });
   }
 }

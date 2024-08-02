@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { Media } from '../models/media.interface';
+import type { ApiResponse } from '../models/api-response';
 
 @Injectable({
   providedIn: 'root',
@@ -9,98 +9,31 @@ import { Media } from '../models/media.interface';
 export class MediaService {
   private movieBaseUrl: string = 'https://api.themoviedb.org/3/movie';
   private tvSeriesBaseUrl: string = 'https://api.themoviedb.org/3/tv';
-  private extraParameters: string =
-    '?include_adult=true&include_video=true&language=es-ES&page=1&sort_by=popularity.desc';
+  private extraParameters: string = '?include_adult=true&include_video=true&language=es-ES&page=1&sort_by=popularity.desc';
 
   constructor(private httpClient: HttpClient) {}
 
-  getPopularMovies(): Observable<{ pageTitle: string; media: Media[] }> {
-    return this.httpClient
-      .get<{ results: Media[] }>(
-        `${this.movieBaseUrl}/popular${this.extraParameters}`
-      )
-      .pipe(
-        map((data) => {
-          return {
-            pageTitle: 'Popular Movies',
-            media: data.results,
-          };
-        })
-      );
+  getPopularMovies(): Observable<ApiResponse> {
+    return this.httpClient.get<ApiResponse>(`${this.movieBaseUrl}/popular${this.extraParameters}`).pipe(map((data) => data));
   }
 
-  geUpcomingMovies(): Observable<{ pageTitle: string; media: Media[] }> {
-    return this.httpClient
-      .get<{ results: Media[] }>(
-        `${this.movieBaseUrl}/upcoming${this.extraParameters}`
-      )
-      .pipe(
-        map((data) => {
-          return {
-            pageTitle: 'Upcoming Movies',
-            media: data.results,
-          };
-        })
-      );
+  geUpcomingMovies(): Observable<ApiResponse> {
+    return this.httpClient.get<ApiResponse>(`${this.movieBaseUrl}/upcoming${this.extraParameters}`).pipe(map((data) => data));
   }
 
-  getPopularTvSeries(): Observable<{ pageTitle: string; media: Media[] }> {
-    return this.httpClient
-      .get<{ results: Media[] }>(
-        `${this.tvSeriesBaseUrl}/popular${this.extraParameters}`
-      )
-      .pipe(
-        map((data) => {
-          return {
-            pageTitle: 'Popular TV Series',
-            media: data.results,
-          };
-        })
-      );
+  getPopularTvSeries(): Observable<ApiResponse> {
+    return this.httpClient.get<ApiResponse>(`${this.tvSeriesBaseUrl}/popular${this.extraParameters}`).pipe(map((data) => data));
   }
 
-  geTopRatedMovies(): Observable<{ pageTitle: string; media: Media[] }> {
-    return this.httpClient
-      .get<{ results: Media[] }>(
-        `${this.movieBaseUrl}/top_rated${this.extraParameters}`
-      )
-      .pipe(
-        map((data) => {
-          return {
-            pageTitle: 'Top Rated Movies',
-            media: data.results,
-          };
-        })
-      );
+  geTopRatedMovies(): Observable<ApiResponse> {
+    return this.httpClient.get<ApiResponse>(`${this.movieBaseUrl}/top_rated${this.extraParameters}`).pipe(map((data) => data));
   }
 
-  geTopRatedTvSeries(): Observable<{ pageTitle: string; media: Media[] }> {
-    return this.httpClient
-      .get<{ results: Media[] }>(
-        `${this.tvSeriesBaseUrl}/top_rated${this.extraParameters}`
-      )
-      .pipe(
-        map((data) => {
-          return {
-            pageTitle: 'Top Rated TV Series',
-            media: data.results,
-          };
-        })
-      );
+  geTopRatedTvSeries(): Observable<ApiResponse> {
+    return this.httpClient.get<ApiResponse>(`${this.tvSeriesBaseUrl}/top_rated${this.extraParameters}`).pipe(map((data) => data));
   }
 
-  getAiringTodayTvSeries(): Observable<{ pageTitle: string; media: Media[] }> {
-    return this.httpClient
-      .get<{ results: Media[] }>(
-        `${this.tvSeriesBaseUrl}/airing_today${this.extraParameters}`
-      )
-      .pipe(
-        map((data) => {
-          return {
-            pageTitle: 'Airing Today TV Series',
-            media: data.results,
-          };
-        })
-      );
+  getAiringTodayTvSeries(): Observable<ApiResponse> {
+    return this.httpClient.get<ApiResponse>(`${this.tvSeriesBaseUrl}/top_rated${this.extraParameters}`).pipe(map((data) => data));
   }
 }
