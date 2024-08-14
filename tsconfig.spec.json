@@ -6,9 +6,5 @@
     "outDir": "./out-tsc/spec",
     "types": ["jest", "@testing-library/jest-dom"]
   },
-  "include": [
-    "src/**/*.spec.ts",
-    "src/**/*.d.ts",
-    "**/*.spec.ts"
-  ]
+  "include": ["src/**/*.spec.ts", "src/**/*.d.ts", "**/*.spec.ts"]
 }

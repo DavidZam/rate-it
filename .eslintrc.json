@@ -1,6 +1,5 @@
 {
   "root": true,
-  "ignorePatterns": ["projects/**/*"],
   "parserOptions": {
     "ecmaVersion": 12,
     "sourceType": "module"

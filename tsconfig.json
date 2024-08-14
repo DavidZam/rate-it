@@ -2,7 +2,7 @@
 /* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
 {
   "compileOnSave": false,
-  "exclude": ["**/*.spec.ts"],
+  "include": ["src/**/*.ts"],
   "compilerOptions": {
     "outDir": "./dist/out-tsc",
     "strict": true,
@@ -21,7 +21,7 @@
     "module": "ES2022",
     "useDefineForClassFields": false,
     "lib": ["ES2022", "dom"],
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
       "@components/*": ["src/app/components/*"],
       "@guards/*": ["src/app/core/guards/*"],
