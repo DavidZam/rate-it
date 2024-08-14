@@ -2,7 +2,7 @@ import { DatePipe, registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
 import { render, screen } from '@testing-library/angular';
 import '@testing-library/jest-dom';
-import type { Media } from '../../core/models/media.interface';
+import type { Media } from '@models/media.interface';
 import { MediaCardComponent } from './media-card.component';
 
 const media: Media = {
@@ -66,9 +66,7 @@ describe('Media Card', () => {
     const pipe = new DatePipe('en');
     const dateWithPipe = pipe.transform(media.release_date, 'dd/MM/yyyy') || '';
 
-    expect(
-      screen.getByRole('heading', { name: `Release date: ${dateWithPipe}` })
-    ).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: `Release date: ${dateWithPipe}` })).toBeInTheDocument();
   });
 
   it('should display media poster path on render', async () => {

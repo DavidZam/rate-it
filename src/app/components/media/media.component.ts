@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import type { Media } from '../../core/models/media.interface';
+import type { Media } from '@models/media.interface';
 import { MediaCardComponent } from '../media-card/media-card.component';
 import { MediaPageTitleComponent } from '../media-page-title/media-page-title.component';
 

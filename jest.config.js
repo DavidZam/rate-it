@@ -11,6 +11,8 @@ module.exports = {
     '^@pages/(.*)$': '<rootDir>/src/app/pages/$1',
     '^@directives/(.*)$': '<rootDir>/src/app/shared/directives/$1',
     '^@pipes/(.*)$': '<rootDir>/src/app/shared/pipes/$1',
+    '^@sharedComponents/(.*)$': '<rootDir>/src/app/shared/components/$1',
+    '^@env/(.*)$': '<rootDir>/env/$1',
   },
   restoreMocks: true,
 };

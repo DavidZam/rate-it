@@ -3,7 +3,6 @@ import localeEs from '@angular/common/locales/es';
 import { TestBed } from '@angular/core/testing';
 import { DateFormatPipe } from './date-pipe.pipe';
 
-// Register the locale data
 registerLocaleData(localeEs);
 
 describe('DateFormatPipe', () => {

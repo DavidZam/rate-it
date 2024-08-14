@@ -1,9 +1,9 @@
 import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { MediaComponent } from '../../../components/media/media.component';
-import type { ApiResponse } from '../../../core/models/api-response';
-import type { Media } from '../../../core/models/media.interface';
-import { MediaService } from '../../../core/services/media.service';
+import { MediaComponent } from '@components/media/media.component';
+import type { ApiResponse } from '@models/api-response';
+import type { Media } from '@models/media.interface';
+import { MediaService } from '@services/media.service';
 
 @Component({
   selector: 'app-popular-tv-series',

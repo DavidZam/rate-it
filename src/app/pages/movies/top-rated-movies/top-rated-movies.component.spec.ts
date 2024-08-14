@@ -1,7 +1,7 @@
 import { HttpClient, HttpHandler } from '@angular/common/http';
+import { MediaComponent } from '@components/media/media.component';
 import { render } from '@testing-library/angular';
 import '@testing-library/jest-dom';
-import { MediaComponent } from '../../../components/media/media.component';
 import { TopRatedMoviesComponent } from './top-rated-movies.component';
 
 describe('Top Rated Movies', () => {

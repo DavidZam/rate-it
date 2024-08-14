@@ -1,8 +1,8 @@
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
 import { Component, Input } from '@angular/core';
-import type { Media } from '../../core/models/media.interface';
-import { DateFormatPipe } from '../../shared/pipes/date-pipe.pipe';
+import type { Media } from '@models/media.interface';
+import { DateFormatPipe } from '@pipes/date-pipe.pipe';
 
 registerLocaleData(localeEs);
 
